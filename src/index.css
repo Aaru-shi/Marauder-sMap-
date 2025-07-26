@@ -2,41 +2,69 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Marauder's Map Magical Design System */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Magical Parchment Background */
+    --background: 42 28% 92%;
+    --foreground: 25 20% 15%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Ancient Parchment Cards */
+    --card: 40 30% 96%;
+    --card-foreground: 25 20% 15%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    /* Magical Popovers */
+    --popover: 40 30% 96%;
+    --popover-foreground: 25 20% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Deep Crimson Primary */
+    --primary: 348 83% 47%;
+    --primary-foreground: 0 0% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Midnight Blue Secondary */
+    --secondary: 210 50% 20%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted Parchment */
+    --muted: 42 15% 85%;
+    --muted-foreground: 25 20% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Phoenix Gold Accent */
+    --accent: 43 96% 56%;
+    --accent-foreground: 25 20% 15%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Emerald Green Success */
+    --success: 142 72% 29%;
+    --success-foreground: 0 0% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Destructive Red */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
 
-    --radius: 0.5rem;
+    /* Magical Borders */
+    --border: 42 20% 75%;
+    --input: 42 20% 75%;
+    --ring: 348 83% 47%;
+
+    /* Magic Circle Radius */
+    --radius: 0.75rem;
+
+    /* Magical Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(348 83% 47%), hsl(348 83% 37%));
+    --gradient-secondary: linear-gradient(135deg, hsl(210 50% 20%), hsl(210 50% 15%));
+    --gradient-gold: linear-gradient(135deg, hsl(43 96% 56%), hsl(43 96% 46%));
+    --gradient-parchment: linear-gradient(135deg, hsl(42 28% 92%), hsl(42 20% 88%));
+    --gradient-emerald: linear-gradient(135deg, hsl(142 72% 29%), hsl(142 72% 24%));
+    
+    /* Magical Shadows */
+    --shadow-magical: 0 10px 30px -10px hsl(348 83% 47% / 0.3);
+    --shadow-parchment: 0 4px 20px -4px hsl(25 20% 15% / 0.15);
+    --shadow-glow: 0 0 20px hsl(43 96% 56% / 0.4);
+
+    /* Animation Variables */
+    --transition-magical: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.3s ease-out;
 
     --sidebar-background: 0 0% 98%;
 
@@ -56,41 +84,53 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Dark Magical Background */
+    --background: 222 50% 8%;
+    --foreground: 43 96% 56%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    /* Dark Parchment Cards */
+    --card: 222 45% 12%;
+    --card-foreground: 43 96% 56%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    /* Dark Popovers */
+    --popover: 222 45% 12%;
+    --popover-foreground: 43 96% 56%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    /* Glowing Crimson Primary in Dark */
+    --primary: 348 83% 60%;
+    --primary-foreground: 222 50% 8%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    /* Deep Night Blue Secondary */
+    --secondary: 210 50% 15%;
+    --secondary-foreground: 43 96% 56%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    /* Dark Muted */
+    --muted: 222 30% 15%;
+    --muted-foreground: 43 50% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    /* Bright Phoenix Gold in Dark */
+    --accent: 43 96% 65%;
+    --accent-foreground: 222 50% 8%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    /* Bright Emerald in Dark */
+    --success: 142 72% 45%;
+    --success-foreground: 222 50% 8%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Dark Destructive */
+    --destructive: 0 84% 65%;
+    --destructive-foreground: 222 50% 8%;
+
+    /* Dark Borders */
+    --border: 222 30% 18%;
+    --input: 222 30% 18%;
+    --ring: 348 83% 60%;
+
+    /* Dark Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(348 83% 60%), hsl(348 83% 50%));
+    --gradient-secondary: linear-gradient(135deg, hsl(210 50% 15%), hsl(210 50% 10%));
+    --gradient-gold: linear-gradient(135deg, hsl(43 96% 65%), hsl(43 96% 55%));
+    --gradient-parchment: linear-gradient(135deg, hsl(222 50% 8%), hsl(222 45% 12%));
+    --gradient-emerald: linear-gradient(135deg, hsl(142 72% 45%), hsl(142 72% 35%));
   }
 }
 
@@ -100,6 +140,175 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-crimson;
+    background: var(--gradient-parchment);
+    min-height: 100vh;
   }
+}
+
+@layer components {
+  /* Magical Button Variants */
+  .btn-magical {
+    @apply relative overflow-hidden rounded-lg px-6 py-3 font-medium transition-all duration-300;
+    background: var(--gradient-primary);
+    color: hsl(var(--primary-foreground));
+    box-shadow: var(--shadow-magical);
+  }
+  
+  .btn-magical:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-magical), var(--shadow-glow);
+  }
+  
+  .btn-magical::before {
+    @apply absolute inset-0 -translate-x-full transform bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700;
+    content: '';
+  }
+  
+  .btn-magical:hover::before {
+    @apply translate-x-full;
+  }
+
+  /* Spell Card Styling */
+  .spell-card {
+    @apply relative rounded-xl border-2 border-border/50 p-6 transition-all duration-300;
+    background: var(--gradient-parchment);
+    box-shadow: var(--shadow-parchment);
+  }
+  
+  .spell-card:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: var(--shadow-magical);
+    border-color: hsl(var(--accent));
+  }
+
+  /* Magical Navigation Tabs */
+  .nav-tab {
+    @apply relative flex items-center gap-2 rounded-lg px-4 py-3 font-medium transition-all duration-300;
+    color: hsl(var(--muted-foreground));
+  }
+  
+  .nav-tab.active {
+    background: var(--gradient-gold);
+    color: hsl(var(--accent-foreground));
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .nav-tab:not(.active):hover {
+    background: hsl(var(--muted));
+    color: hsl(var(--foreground));
+  }
+
+  /* Floating Particles Animation */
+  .floating-particles::before {
+    @apply absolute inset-0 pointer-events-none;
+    content: '';
+    background-image: 
+      radial-gradient(2px 2px at 20px 30px, hsl(var(--accent)), transparent),
+      radial-gradient(2px 2px at 40px 70px, hsl(var(--primary)), transparent),
+      radial-gradient(1px 1px at 90px 40px, hsl(var(--accent)), transparent);
+    background-repeat: repeat;
+    background-size: 100px 100px;
+    animation: float 20s infinite linear;
+    opacity: 0.3;
+  }
+
+  /* Parchment Texture */
+  .parchment-bg {
+    background: var(--gradient-parchment);
+    background-image: 
+      radial-gradient(circle at 25% 25%, hsl(var(--muted)) 1px, transparent 1px),
+      radial-gradient(circle at 75% 75%, hsl(var(--muted)) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  /* Magical Map Styles */
+  .map-container {
+    @apply relative rounded-xl border-4 overflow-hidden;
+    border-color: hsl(var(--accent));
+    background: var(--gradient-parchment);
+    box-shadow: inset 0 0 30px hsl(var(--muted) / 0.5), var(--shadow-magical);
+  }
+  
+  .user-pin {
+    @apply absolute w-8 h-8 rounded-full border-2 flex items-center justify-center text-sm font-bold transition-all duration-300 cursor-pointer;
+    border-color: hsl(var(--accent));
+    background: var(--gradient-gold);
+    color: hsl(var(--accent-foreground));
+    box-shadow: var(--shadow-glow);
+    animation: pulse-glow 2s infinite;
+  }
+  
+  .user-pin:hover {
+    transform: scale(1.2);
+    z-index: 10;
+  }
+
+  /* House Colors */
+  .gryffindor { --house-primary: 358 75% 45%; --house-secondary: 45 85% 55%; }
+  .slytherin { --house-primary: 144 65% 30%; --house-secondary: 0 0% 85%; }
+  .hufflepuff { --house-primary: 50 85% 50%; --house-secondary: 25 15% 25%; }
+  .ravenclaw { --house-primary: 225 70% 40%; --house-secondary: 40 60% 60%; }
+}
+
+@layer utilities {
+  /* Magical Animations */
+  @keyframes float {
+    0% { transform: translateY(0px) rotate(0deg); }
+    33% { transform: translateY(-10px) rotate(120deg); }
+    66% { transform: translateY(5px) rotate(240deg); }
+    100% { transform: translateY(0px) rotate(360deg); }
+  }
+  
+  @keyframes pulse-glow {
+    0%, 100% { 
+      box-shadow: 0 0 10px hsl(var(--accent) / 0.5);
+      transform: scale(1);
+    }
+    50% { 
+      box-shadow: 0 0 20px hsl(var(--accent) / 0.8);
+      transform: scale(1.05);
+    }
+  }
+  
+  @keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+  
+  @keyframes spell-cast {
+    0% { 
+      transform: scale(1) rotate(0deg);
+      filter: brightness(1);
+    }
+    50% { 
+      transform: scale(1.1) rotate(180deg);
+      filter: brightness(1.5) hue-rotate(90deg);
+    }
+    100% { 
+      transform: scale(1) rotate(360deg);
+      filter: brightness(1);
+    }
+  }
+
+  /* Typography Classes */
+  .font-cinzel { font-family: 'Cinzel', serif; }
+  .font-uncial { font-family: 'Uncial Antiqua', cursive; }
+  .font-crimson { font-family: 'Crimson Text', serif; }
+  
+  /* Magical Utilities */
+  .animate-float { animation: float 6s ease-in-out infinite; }
+  .animate-pulse-glow { animation: pulse-glow 2s infinite; }
+  .animate-shimmer { animation: shimmer 2s infinite; }
+  .animate-spell-cast { animation: spell-cast 1s ease-in-out; }
+  
+  .bg-gradient-primary { background: var(--gradient-primary); }
+  .bg-gradient-secondary { background: var(--gradient-secondary); }
+  .bg-gradient-gold { background: var(--gradient-gold); }
+  .bg-gradient-parchment { background: var(--gradient-parchment); }
+  .bg-gradient-emerald { background: var(--gradient-emerald); }
+  
+  .shadow-magical { box-shadow: var(--shadow-magical); }
+  .shadow-parchment { box-shadow: var(--shadow-parchment); }
+  .shadow-glow { box-shadow: var(--shadow-glow); }
 }
